@@ -5,6 +5,8 @@ import { FormLabelStyle } from './components/formLabel';
 import { InputStyle } from './components/input';
 import { LinkStyle } from './components/link';
 
+import { HeadingStyle } from 'theme/components/heading';
+
 export const theme = extendTheme({
   colors: {
     yellow: {
@@ -25,11 +27,7 @@ export const theme = extendTheme({
     mono: 'Menlo, monospace',
   },
   components: {
-    Heading: {
-      baseStyle: {
-        fontWeight: 500,
-      },
-    },
+    Heading: HeadingStyle,
     Button: ButtonStyle,
     FormLabel: FormLabelStyle,
     Input: InputStyle,
