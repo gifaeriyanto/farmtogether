@@ -45,17 +45,14 @@ const Index: NextPage = () => {
         </FormControl>
 
         <FormControl borderLeft="2px solid" borderColor="yellow.500" pl="4">
-          <HStack spacing="4" alignItems="flex-start">
-            <Box mt="1">
-              <Checkbox colorScheme="yellow" size="lg" />
-            </Box>
-            <Text fontSize="sm">
+          <Checkbox colorScheme="yellow" size="lg" alignItems="flex-start">
+            <Text fontSize="sm" mt="-1" ml="1">
               I agree to the <CLink>terms of service</CLink>,{' '}
               <CLink>privacy policy</CLink>,
               <CLink>electronic communications disclosure</CLink>, and{' '}
               <CLink>electronic funds transfer disclosure</CLink>
             </Text>
-          </HStack>
+          </Checkbox>
         </FormControl>
 
         <Button isFullWidth h="60px">
