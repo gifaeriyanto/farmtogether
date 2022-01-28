@@ -1,5 +1,5 @@
-import { Box, Container, Flex } from '@chakra-ui/react';
 import React from 'react';
+import { Box, Container, Flex } from '@chakra-ui/react';
 
 const CenterLayout: React.FC = ({ children }) => {
   return (

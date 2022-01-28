@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   Box,
   Button,
@@ -11,9 +12,9 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
-import CenterLayout from 'layout/center';
 import { NextPage } from 'next';
-import React from 'react';
+
+import CenterLayout from 'layout/center';
 
 const Index: NextPage = () => {
   return (

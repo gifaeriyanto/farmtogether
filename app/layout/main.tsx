@@ -1,6 +1,7 @@
+import React from 'react';
 import { AspectRatio, Box, Button, Flex } from '@chakra-ui/react';
 import Link from 'next/link';
-import React from 'react';
+
 import { Logo } from 'components/logo';
 
 export const MainLayout: React.FC = ({ children }) => {

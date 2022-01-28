@@ -1,5 +1,5 @@
-import { createIcon } from '@chakra-ui/react';
 import React from 'react';
+import { createIcon } from '@chakra-ui/react';
 
 export const Logo = createIcon({
   displayName: 'FarmTogetherLogo',
@@ -56,21 +56,21 @@ export const Logo = createIcon({
       ></path>
       <path
         fill="#F97362"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M50.73 20.291l10.856-6.764C66.124 10.716 68.88 5.733 68.88.361V.333L58.023 7.069c-4.537 2.84-7.292 7.85-7.292 13.222z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       ></path>
       <path
         fill="#F8C54F"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M50.73 19.595v8.379l-4.23-2.589a14.97 14.97 0 01-7.126-12.749l11.357 6.96z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       ></path>
       <path
         fill="#FEB734"
-        fill-rule="evenodd"
+        fillRule="evenodd"
         d="M54.488 5.316c0 1.92-1.53 3.451-3.395 3.451-1.893 0-3.397-1.559-3.397-3.451 0-1.921 1.532-3.452 3.397-3.452 1.892 0 3.395 1.559 3.395 3.452z"
-        clip-rule="evenodd"
+        clipRule="evenodd"
       ></path>
       <defs>
         <linearGradient
@@ -81,8 +81,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint1_linear"
@@ -92,8 +92,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint2_linear"
@@ -103,8 +103,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint3_linear"
@@ -114,8 +114,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint4_linear"
@@ -125,8 +125,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint5_linear"
@@ -136,8 +136,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint6_linear"
@@ -147,8 +147,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint7_linear"
@@ -158,8 +158,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint8_linear"
@@ -169,8 +169,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint9_linear"
@@ -180,8 +180,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint10_linear"
@@ -191,8 +191,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
         <linearGradient
           id="paint11_linear"
@@ -202,8 +202,8 @@ export const Logo = createIcon({
           y2="64.616"
           gradientUnits="userSpaceOnUse"
         >
-          <stop stop-color="#F8C54F"></stop>
-          <stop offset="1" stop-color="#F97362"></stop>
+          <stop stopColor="#F8C54F"></stop>
+          <stop offset="1" stopColor="#F97362"></stop>
         </linearGradient>
       </defs>
     </>
