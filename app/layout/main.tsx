@@ -1,5 +1,5 @@
 import React from 'react';
-import { AspectRatio, Box, Button, Flex } from '@chakra-ui/react';
+import { Box, Button, Flex } from '@chakra-ui/react';
 import Link from 'next/link';
 
 import { Logo } from 'components/logo';
@@ -21,7 +21,9 @@ export const MainLayout: React.FC = ({ children }) => {
         zIndex="2"
       >
         <Link href="/">
-          <Logo w="110px" h="50px" />
+          <a>
+            <Logo w="110px" h="50px" />
+          </a>
         </Link>
         <Button variant="subtle" colorScheme="yellow" size="sm" px="8" py="5">
           LOGIN

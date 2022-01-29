@@ -1,11 +1,11 @@
 import { extendTheme } from '@chakra-ui/react';
 
-import { ButtonStyle } from './components/button';
-import { FormLabelStyle } from './components/formLabel';
-import { InputStyle } from './components/input';
-import { LinkStyle } from './components/link';
-
+import { ButtonStyle } from 'theme/components/button';
+import { FormErrorStyle } from 'theme/components/formError';
+import { FormLabelStyle } from 'theme/components/formLabel';
 import { HeadingStyle } from 'theme/components/heading';
+import { InputStyle } from 'theme/components/input';
+import { LinkStyle } from 'theme/components/link';
 
 export const theme = extendTheme({
   colors: {
@@ -27,9 +27,10 @@ export const theme = extendTheme({
     mono: 'Menlo, monospace',
   },
   components: {
-    Heading: HeadingStyle,
     Button: ButtonStyle,
+    FormError: FormErrorStyle,
     FormLabel: FormLabelStyle,
+    Heading: HeadingStyle,
     Input: InputStyle,
     Link: LinkStyle,
   },
