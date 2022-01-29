@@ -209,3 +209,30 @@ export const Logo = createIcon({
     </>
   ),
 });
+
+export const SmallLogo = createIcon({
+  displayName: 'FarmTogetherLogo',
+  viewBox: '0.963 0.441 29.506 27.641',
+  path: (
+    <>
+      <path
+        fill="#F97362"
+        fillRule="evenodd"
+        d="M 12.319 20.399 L 23.175 13.635 C 27.713 10.824 30.469 5.841 30.469 0.469 L 30.469 0.441 L 19.612 7.177 C 15.075 10.017 12.32 15.027 12.32 20.399 Z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#F8C54F"
+        fillRule="evenodd"
+        d="M 12.319 19.703 L 12.319 28.082 L 8.089 25.493 C 3.662 22.768 0.964 17.942 0.963 12.744 L 12.32 19.704 Z"
+        clipRule="evenodd"
+      ></path>
+      <path
+        fill="#FEB734"
+        fillRule="evenodd"
+        d="M 16.077 5.424 C 16.077 7.344 14.547 8.875 12.682 8.875 C 10.789 8.875 9.285 7.316 9.285 5.424 C 9.285 3.503 10.817 1.972 12.682 1.972 C 14.574 1.972 16.077 3.531 16.077 5.424 Z"
+        clipRule="evenodd"
+      ></path>
+    </>
+  ),
+});

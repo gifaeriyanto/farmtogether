@@ -78,6 +78,7 @@ export const SetPasswordContainer: React.FC = () => {
         h="60px"
         type="submit"
         isDisabled={!!Object.keys(errors).length}
+        boxShadow="0px 20px 40px rgba(254, 199, 98, 0.25)"
       >
         Sign Up
       </Button>

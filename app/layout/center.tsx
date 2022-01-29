@@ -1,15 +1,25 @@
 import React from 'react';
-import { Box, Container, Flex } from '@chakra-ui/react';
+import { Box, Container } from '@chakra-ui/react';
 
 const CenterLayout: React.FC = ({ children }) => {
   return (
-    <Flex justify="center" align="center" py="70px" minH="100vh">
-      <Container p="10">
-        <Box bgColor="white" boxShadow="lg" p="8" borderRadius="sm" minW="">
-          {children}
-        </Box>
-      </Container>
-    </Flex>
+    <Container
+      px={{ base: '0', md: '4' }}
+      maxW={{ base: 'full', md: 'container.sm' }}
+      centerContent
+      minH="100vh"
+      pt={{ base: '80px', md: '0' }}
+      justifyContent={{ base: 'flex-start', md: 'center' }}
+    >
+      <Box
+        bgColor="white"
+        boxShadow={{ base: 'none', md: 'lg' }}
+        p="8"
+        borderRadius="sm"
+      >
+        {children}
+      </Box>
+    </Container>
   );
 };
 

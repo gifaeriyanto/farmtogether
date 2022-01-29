@@ -37,10 +37,15 @@ export const theme = extendTheme({
   shadows: {
     lg: '0px 3px 28px rgba(35, 37, 46, 0.05)',
   },
+  sizes: {
+    container: {
+      sm: '570px',
+    },
+  },
   styles: {
     global: {
       body: {
-        bg: '#F5F7FA',
+        bg: { base: '#FFF', md: '#F5F7FA' },
         minH: '100vh',
         fontSize: '14px',
       },

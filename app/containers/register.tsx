@@ -10,6 +10,7 @@ import {
   Text,
   VStack,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { useForm } from 'react-hook-form';
 
 export interface RegisterFormFields {
@@ -26,8 +27,11 @@ export const RegisterContainer: React.FC = () => {
     handleSubmit,
     formState: { errors },
   } = useForm<RegisterFormFields>();
+  const router = useRouter();
 
-  const onSubmit = (data: unknown) => console.log(data);
+  const onSubmit = (data: unknown) => {
+    router.push('/set-password');
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -102,6 +106,7 @@ export const RegisterContainer: React.FC = () => {
           h="60px"
           type="submit"
           isDisabled={!!Object.keys(errors).length}
+          boxShadow="0px 20px 40px rgba(254, 199, 98, 0.25)"
         >
           Continue
         </Button>
