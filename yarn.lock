@@ -655,7 +655,7 @@
   dependencies:
     "@chakra-ui/utils" "^1.9.1"
 
-"@chakra-ui/react@^1.6.4":
+"@chakra-ui/react@^1.8.1":
   version "1.8.1"
   resolved "https://registry.yarnpkg.com/@chakra-ui/react/-/react-1.8.1.tgz#0c80b51c598cc796e0abd205ca695bb2ef379e54"
   integrity sha512-QnO/XCQ/m+hLgEo7PRfg8lduC+uMMy4NPRjcE1SdmUTm9wdVVCcT26yWtnlLBjvtNCpmgtkU2m4BOMWsP1Dh1w==
@@ -5794,6 +5794,11 @@ react-hook-form@^7.25.2:
   version "7.25.2"
   resolved "https://registry.yarnpkg.com/react-hook-form/-/react-hook-form-7.25.2.tgz#1b4b2f53ab401c1afe7733efaa66cd1975750adf"
   integrity sha512-ueZD1ACSkQVQs6HIl9mTqh13mv/H4pOvBXuH7vhtQIT+tOWBX4kK6Q5nlVbsLzsQntBHdVGkIVwdWKVQ/SG2TQ==
+
+react-icons@^4.3.1:
+  version "4.3.1"
+  resolved "https://registry.yarnpkg.com/react-icons/-/react-icons-4.3.1.tgz#2fa92aebbbc71f43d2db2ed1aed07361124e91ca"
+  integrity sha512-cB10MXLTs3gVuXimblAdI71jrJx8njrJZmNMEMC+sQu5B/BIOmlsAjskdqpn81y8UBVEGuHODd7/ci5DvoSzTQ==
 
 react-is@17.0.2, react-is@^17.0.1:
   version "17.0.2"
