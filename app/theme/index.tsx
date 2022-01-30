@@ -6,6 +6,7 @@ import { FormLabelStyle } from 'theme/components/formLabel';
 import { HeadingStyle } from 'theme/components/heading';
 import { InputStyle } from 'theme/components/input';
 import { LinkStyle } from 'theme/components/link';
+import { SelectStyle } from 'theme/components/select';
 
 export const theme = extendTheme({
   colors: {
@@ -33,6 +34,7 @@ export const theme = extendTheme({
     Heading: HeadingStyle,
     Input: InputStyle,
     Link: LinkStyle,
+    Select: SelectStyle,
   },
   shadows: {
     lg: '0px 3px 28px rgba(35, 37, 46, 0.05)',

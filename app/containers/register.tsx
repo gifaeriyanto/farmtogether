@@ -7,11 +7,15 @@ import {
   FormLabel,
   Input,
   Link as CLink,
+  Select,
   Text,
   VStack,
 } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
+
+import { Country, useCountries } from 'api/countries';
+import { AdvancedSelect } from 'components/advanceSelect';
 
 export interface RegisterFormFields {
   first_name: string;
@@ -26,10 +30,13 @@ export const RegisterContainer: React.FC = () => {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm<RegisterFormFields>();
   const router = useRouter();
+  const { data: countries } = useCountries();
 
   const onSubmit = (data: unknown) => {
+    console.log(data);
     router.push('/set-password');
   };
 
@@ -72,11 +79,17 @@ export const RegisterContainer: React.FC = () => {
 
         <FormControl isInvalid={!!errors.country}>
           <FormLabel htmlFor="country">Country</FormLabel>
-          <Input
-            id="country"
-            {...register('country', {
-              required: true,
-            })}
+          <Controller
+            name="country"
+            control={control}
+            render={({ field }) => (
+              <AdvancedSelect
+                options={countries}
+                getOptionValue={(option) => (option as Country).id}
+                getOptionLabel={(option) => (option as Country).name}
+                onChange={(value) => field.onChange((value as Country).id)}
+              />
+            )}
           />
           <FormErrorMessage>Country is required.</FormErrorMessage>
         </FormControl>
