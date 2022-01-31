@@ -18,6 +18,7 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useMutation } from 'react-query';
 
 import { checkPhoneIfExist, registerUser } from 'api/register';
+import { InputMask } from 'components/inputMask';
 
 export interface SetPasswordFormFields {
   password: string;
@@ -132,10 +133,11 @@ export const SetPasswordContainer: React.FC = () => {
               },
             }}
             render={({ field }) => (
-              <Input
+              <InputMask
                 id="phone"
                 placeholder="+1(XXX)XXX-XXXX"
                 onChange={field.onChange}
+                mask="+1(999)999-9999"
               />
             )}
           />
