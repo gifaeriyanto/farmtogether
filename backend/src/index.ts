@@ -31,7 +31,7 @@ app.post("/api/check-email", upload.none(), async (req, res) => {
     return;
   }
 
-  const isExist = await checkUserIfExist(req.body.email);
+  const isExist = await checkUserIfExist({ email: req.body.email });
   if (isExist) {
     res.status(403);
     res.send(
@@ -43,6 +43,28 @@ app.post("/api/check-email", upload.none(), async (req, res) => {
     res.send(
       JSON.stringify({
         status: "Email is not exist",
+      })
+    );
+  }
+});
+
+app.post("/api/check-phone", upload.none(), async (req, res) => {
+  if (!req.body.phone) {
+    return;
+  }
+
+  const isExist = await checkUserIfExist({ phone: req.body.phone });
+  if (isExist) {
+    res.status(403);
+    res.send(
+      JSON.stringify({
+        status: "Phone number is exist",
+      })
+    );
+  } else {
+    res.send(
+      JSON.stringify({
+        status: "Phone number is not exist",
       })
     );
   }

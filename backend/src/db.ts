@@ -47,10 +47,13 @@ export const register = async (body: User) => {
   await db.write();
 };
 
-export const checkUserIfExist = async (email: string) => {
+export const checkUserIfExist = async (params: {
+  email?: string;
+  phone?: string;
+}) => {
   await db.read();
   const registered = registeredData(db);
 
-  const isExist = !!_.find(registered, { email });
+  const isExist = !!_.find(registered, params);
   return isExist;
 };
