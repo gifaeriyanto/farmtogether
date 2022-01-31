@@ -3,7 +3,7 @@ import { Heading } from '@chakra-ui/react';
 import { NextPage } from 'next';
 
 import { RegisterContainer } from 'containers/register';
-import CenterLayout from 'layout/center';
+import { CenterLayout } from 'layout/center';
 
 const Index: NextPage = () => {
   return (

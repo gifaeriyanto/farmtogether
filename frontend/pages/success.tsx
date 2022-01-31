@@ -3,7 +3,7 @@ import { Box, Heading, Icon } from '@chakra-ui/react';
 import { NextPage } from 'next';
 import { BsFillCheckCircleFill } from 'react-icons/bs';
 
-import CenterLayout from 'layout/center';
+import { CenterLayout } from 'layout/center';
 
 const Index: NextPage = () => {
   return (

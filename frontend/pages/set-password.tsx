@@ -4,7 +4,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 
 import { SetPasswordContainer } from 'containers/setPassword';
-import CenterLayout from 'layout/center';
+import { CenterLayout } from 'layout/center';
 
 const Index: NextPage = () => {
   const router = useRouter();
@@ -17,7 +17,7 @@ const Index: NextPage = () => {
   }, []);
 
   return (
-    <CenterLayout>
+    <CenterLayout withBackButton>
       <Heading fontSize="lg" mb="4">
         Enter your password
       </Heading>
