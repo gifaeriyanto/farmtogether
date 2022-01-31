@@ -16,6 +16,7 @@ import { Controller, useForm } from 'react-hook-form';
 
 import { Country, useCountries } from 'api/countries';
 import { AdvancedSelect } from 'components/advanceSelect';
+import { checkEmailIfExist } from 'api/register';
 
 export interface RegisterFormFields {
   first_name: string;
@@ -35,8 +36,8 @@ export const RegisterContainer: React.FC = () => {
   const router = useRouter();
   const { data: countries } = useCountries();
 
-  const onSubmit = (data: unknown) => {
-    console.log(data);
+  const onSubmit = (data: RegisterFormFields) => {
+    localStorage.setItem('tmp-data', JSON.stringify(data));
     router.push('/set-password');
   };
 
@@ -51,7 +52,7 @@ export const RegisterContainer: React.FC = () => {
               required: true,
             })}
           />
-          <FormErrorMessage>First name is required.</FormErrorMessage>
+          <FormErrorMessage>First name is required</FormErrorMessage>
         </FormControl>
 
         <FormControl isInvalid={!!errors.last_name}>
@@ -62,19 +63,30 @@ export const RegisterContainer: React.FC = () => {
               required: true,
             })}
           />
-          <FormErrorMessage>Last name is required.</FormErrorMessage>
+          <FormErrorMessage>Last name is required</FormErrorMessage>
         </FormControl>
 
         <FormControl isInvalid={!!errors.email}>
           <FormLabel htmlFor="email">Email</FormLabel>
-          <Input
-            id="email"
-            type="email"
-            {...register('email', {
-              required: true,
-            })}
+          <Controller
+            name="email"
+            control={control}
+            rules={{
+              required: 'Email is required',
+              validate: async (value) => {
+                try {
+                  const { status } = await checkEmailIfExist(value);
+                  return status === 200;
+                } catch (error) {
+                  return 'Email is exist';
+                }
+              },
+            }}
+            render={({ field }) => (
+              <Input id="email" type="email" onChange={field.onChange} />
+            )}
           />
-          <FormErrorMessage>Email is required.</FormErrorMessage>
+          <FormErrorMessage>{errors.email?.message}</FormErrorMessage>
         </FormControl>
 
         <FormControl isInvalid={!!errors.country}>
@@ -91,7 +103,7 @@ export const RegisterContainer: React.FC = () => {
               />
             )}
           />
-          <FormErrorMessage>Country is required.</FormErrorMessage>
+          <FormErrorMessage>Country is required</FormErrorMessage>
         </FormControl>
       </VStack>
 

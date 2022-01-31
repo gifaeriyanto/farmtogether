@@ -9,10 +9,14 @@ import {
   InputGroup,
   InputRightElement,
   useBoolean,
+  useToast,
   VStack,
 } from '@chakra-ui/react';
-import { useForm } from 'react-hook-form';
+import { Controller, useForm } from 'react-hook-form';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
+import { useMutation } from 'react-query';
+import { checkPhoneIfExist, registerUser } from 'api/register';
+import { useRouter } from 'next/router';
 
 export interface SetPasswordFormFields {
   password: string;
@@ -20,14 +24,49 @@ export interface SetPasswordFormFields {
 }
 
 export const SetPasswordContainer: React.FC = () => {
+  const toast = useToast();
+  const router = useRouter();
   const [showPassword, setShowPassword] = useBoolean();
   const {
     register,
     handleSubmit,
     formState: { errors },
+    control,
   } = useForm<SetPasswordFormFields>();
 
-  const onSubmit = (data: unknown) => console.log(data);
+  const registerMutation = useMutation(
+    'register',
+    ({ formData }: { formData: FormData }) => registerUser(formData),
+    {
+      onSuccess: () => {
+        toast({
+          title: 'Account created',
+          description: "We've created your account.",
+          status: 'success',
+          position: 'top',
+          duration: 9000,
+          isClosable: true,
+        });
+        localStorage.removeItem('tmp-data');
+        router.push('/success');
+      },
+    },
+  );
+
+  const onSubmit = (data: SetPasswordFormFields) => {
+    const tmpData = localStorage.getItem('tmp-data');
+    if (!tmpData) {
+      return;
+    }
+
+    const parsed = JSON.parse(tmpData);
+    const combineData = { ...parsed, ...data };
+    const formData = new FormData();
+    Object.keys(combineData).forEach((key) => {
+      formData.append(key, combineData[key]);
+    });
+    registerMutation.mutate({ formData });
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
@@ -40,7 +79,19 @@ export const SetPasswordContainer: React.FC = () => {
               placeholder="Enter password"
               type={showPassword ? 'test' : 'password'}
               {...register('password', {
-                required: true,
+                required: {
+                  value: true,
+                  message: 'Password is required',
+                },
+                minLength: {
+                  value: 6,
+                  message: 'Minimum 6 characters',
+                },
+                pattern: {
+                  value: /^(?=.*[a-z])(?=.*[A-Z])[a-zA-Z\d]{6,}$/,
+                  message:
+                    'Must contain at least one uppercase and one lowercase',
+                },
               })}
             />
             <InputRightElement mt="-4">
@@ -56,19 +107,39 @@ export const SetPasswordContainer: React.FC = () => {
               />
             </InputRightElement>
           </InputGroup>
-          <FormErrorMessage>Password is required.</FormErrorMessage>
+          <FormErrorMessage>{errors.password?.message}</FormErrorMessage>
         </FormControl>
 
         <FormControl isInvalid={!!errors.phone}>
           <FormLabel htmlFor="phone">Phone</FormLabel>
-          <Input
-            id="phone"
-            placeholder="+1(XXX)XXX-XXXX"
-            {...register('phone', {
-              required: true,
-            })}
+          <Controller
+            name="phone"
+            control={control}
+            rules={{
+              required: 'Phone number is required',
+              pattern: {
+                value: /^\+1\([0-9]{3}\)[0-9]{3}-[0-9]{4}$/g,
+                message: 'Please fill with +1(XXX)XXX-XXXX format',
+              },
+              validate: async (value) => {
+                try {
+                  const { status } = await checkPhoneIfExist(value);
+                  return status === 200;
+                } catch (error) {
+                  return 'Phone number is exist';
+                }
+              },
+            }}
+            render={({ field }) => (
+              <Input
+                id="phone"
+                placeholder="+1(XXX)XXX-XXXX"
+                onChange={field.onChange}
+              />
+            )}
           />
-          <FormErrorMessage>Phone number is required.</FormErrorMessage>
+
+          <FormErrorMessage>{errors.phone?.message}</FormErrorMessage>
         </FormControl>
       </VStack>
 

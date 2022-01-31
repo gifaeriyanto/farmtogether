@@ -6,6 +6,19 @@ const nextConfig = {
     dirs: ['pages', 'app'],
   },
 
+  async rewrites() {
+    return [
+      {
+        destination: `${process.env.API_BASE_URL}/api/:path*`, // Proxy to Backend
+        source: '/api/ft/:path*',
+      },
+      {
+        destination: 'https://restcountries.com/v3.1/all', // Proxy to restcountries.com
+        source: '/api/countries',
+      },
+    ];
+  },
+
   // webpack config
   webpack(config, _options) {
     // aliases

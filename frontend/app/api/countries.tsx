@@ -22,7 +22,7 @@ export interface Country {
 }
 
 export const getCountries = async () => {
-  return await API.get<RestCountry[]>('https://restcountries.com/v3.1/all');
+  return await API.get<RestCountry[]>('/countries');
 };
 
 export const useCountries = () =>

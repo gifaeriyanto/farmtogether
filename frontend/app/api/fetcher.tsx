@@ -1,6 +1,7 @@
 import axios, { AxiosRequestConfig } from 'axios';
 
 const instance = axios.create({
+  baseURL: '/api',
   headers: {
     'X-Requested-With': 'XMLHttpRequest',
     'Content-Type': 'multipart/form-data',
