@@ -2,7 +2,13 @@
   "registered": [
     {
       "first_name": "Gifa",
-      "last_name": "Eriyanto"
+      "last_name": "Eriyanto",
+      "email": "gifa.eriyanto@gmail.com",
+      "agree": "true",
+      "country": "ID",
+      "password": "$2b$10$07pU19TqM/MEd31q2z2j/.FEIyQw7tKEwPdjFMndKF3Z4slJIeLW.",
+      "phone": "+62 821-9090-6880",
+      "id": "333f8d50-b080-4d3c-9738-69f42296eab6"
     }
   ]
 }
