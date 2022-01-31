@@ -7,7 +7,6 @@ import {
   FormLabel,
   Input,
   Link as CLink,
-  Select,
   Text,
   VStack,
 } from '@chakra-ui/react';
@@ -15,8 +14,8 @@ import { useRouter } from 'next/router';
 import { Controller, useForm } from 'react-hook-form';
 
 import { Country, useCountries } from 'api/countries';
-import { AdvancedSelect } from 'components/advanceSelect';
 import { checkEmailIfExist } from 'api/register';
+import { AdvancedSelect } from 'components/advanceSelect';
 
 export interface RegisterFormFields {
   first_name: string;

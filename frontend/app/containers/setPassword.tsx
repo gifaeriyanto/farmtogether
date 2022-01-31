@@ -12,11 +12,12 @@ import {
   useToast,
   VStack,
 } from '@chakra-ui/react';
+import { useRouter } from 'next/router';
 import { Controller, useForm } from 'react-hook-form';
 import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useMutation } from 'react-query';
+
 import { checkPhoneIfExist, registerUser } from 'api/register';
-import { useRouter } from 'next/router';
 
 export interface SetPasswordFormFields {
   password: string;

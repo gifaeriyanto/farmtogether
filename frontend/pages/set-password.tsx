@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react';
 import { Heading, Text } from '@chakra-ui/react';
 import { NextPage } from 'next';
+import { useRouter } from 'next/router';
 
 import { SetPasswordContainer } from 'containers/setPassword';
 import CenterLayout from 'layout/center';
-import { useRouter } from 'next/router';
 
 const Index: NextPage = () => {
   const router = useRouter();
