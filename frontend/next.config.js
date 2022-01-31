@@ -13,7 +13,7 @@ const nextConfig = {
         source: '/api/ft/:path*',
       },
       {
-        destination: 'https://restcountries.com/v3.1/all', // Proxy to restcountries.com
+        destination: process.env.API_COUNTRIES, // Proxy to restcountries.com
         source: '/api/countries',
       },
     ];
