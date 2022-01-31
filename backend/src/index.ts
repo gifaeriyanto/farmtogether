@@ -33,6 +33,7 @@ app.post("/api/check-email", upload.none(), async (req, res) => {
 
   const isExist = await checkUserIfExist(req.body.email);
   if (isExist) {
+    res.status(403);
     res.send(
       JSON.stringify({
         status: "Email is exist",
