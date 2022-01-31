@@ -1,4 +1,4 @@
-# FarmTogether Test
+# FarmTogether
 
 ## Get Started
 
