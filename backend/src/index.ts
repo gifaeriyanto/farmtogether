@@ -21,19 +21,30 @@ app.get("/ping", (_req, res) => {
   });
 });
 
-app.post("/register", upload.none(), (req, res) => {
+app.post("/api/register", upload.none(), (req, res) => {
   register(req.body);
   res.send(JSON.stringify(req.body));
 });
 
-app.post("/check-user", upload.none(), (req, res) => {
-  let status = "";
-  if (req.body.email) {
-    status = checkUserIfExist(req.body.email)
-      ? "User is exist"
-      : "User is not exist";
+app.post("/api/check-email", upload.none(), async (req, res) => {
+  if (!req.body.email) {
+    return;
   }
-  res.send(status);
+
+  const isExist = await checkUserIfExist(req.body.email);
+  if (isExist) {
+    res.send(
+      JSON.stringify({
+        status: "Email is exist",
+      })
+    );
+  } else {
+    res.send(
+      JSON.stringify({
+        status: "Email is not exist",
+      })
+    );
+  }
 });
 
 app.listen(port, () => {

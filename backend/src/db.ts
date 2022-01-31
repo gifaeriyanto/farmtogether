@@ -51,6 +51,7 @@ export const checkUserIfExist = async (email: string) => {
   await db.read();
   const registered = registeredData(db);
 
+  console.log(_.find(registered, { email }));
   const isExist = !!_.find(registered, { email });
   return isExist;
 };
